@@ -1,0 +1,23 @@
+body {  
+  min-height: 100vh;
+}
+
+#grid {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  font-family: monospace;
+  white-space: pre;
+  width: fit-content;
+  line-height: 1;     
+  white-space: pre; 
+}
+
+#grid > div {
+  display: inline-block;     /* Make each letter container sit side by side */
+  margin-right: 5px;        /* Space between letters horizontally */
+  vertical-align: top;       /* Align letters nicely at the top */
+  white-space: pre;          /* Preserve spacing and line breaks */
+  font-family: monospace;   /* Make sure it’s a fixed-width font */
+}
