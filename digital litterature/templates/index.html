@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Haiku Search</title>
+    <style>
+
+        body {
+            background-color: white;
+            transition: background-color 0.3s ease; /* smooth transition */
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Haikus</h1>
+    
+    <form method="get" action="/">
+        <input type="text" name="value" placeholder="Search..." value="{{ search }}">
+        
+        <select name="column">
+            <option value="">Choisissez</option>
+            <option value="content" {% if field=='content' %}selected{% endif %}>Texte</option>
+            <option value="theme" {% if field=='theme' %}selected{% endif %}>Thème</option>
+            <option value="author" {% if field=='author' %}selected{% endif %}>Auteur</option>
+        </select>
+
+        <label>
+            <input type="checkbox" name=">:(" value="1" id="bg-toggle">
+
+            
+            😠
+        </label>
+        
+        <button type="submit">Valider la recherche</button>
+    </form>
+
+    {% if haikus %}
+    <hr>
+        <ul>
+        {% for haiku in haikus %}
+            <li>
+                <strong>{{ haiku['author'] }} ({{ haiku['theme'] }})</strong><br>
+                <pre>{{ haiku['content'] }}</pre>
+            </li>
+        {% endfor %}
+        </ul>
+    {% elif search %}
+        <p>Aucun résultat trouvé :(</p>
+        <p>Peut-être aurez-vous plus de chances avec des synonimes ?</p>
+        {% if synonims %}
+            <hr>
+            {% for haiku in synonims %}
+                <li>
+                    <strong>{{ haiku['author'] }} ({{ haiku['theme'] }})</strong><br>
+                    <pre>{{ haiku['content'] }}</pre>
+                </li>
+            {% endfor %}
+        {% else %}
+            <p> Ah bah non mdr</p>
+        {% endif %}
+    {% endif %}
+
+<script>
+        const checkbox = document.getElementById('bg-toggle');
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                document.body.style.backgroundColor = "#6f0000";
+                document.body.style.color = "#d4d2d2";
+            } else {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "#000000";
+            }
+    });
+</script>   
+
+</body>
+</html>
