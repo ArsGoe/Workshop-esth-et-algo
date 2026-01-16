@@ -1,6 +1,7 @@
-# Fractals
+# Mercredi
+## Fractals
 
-## Mon Projet
+### Mon Projet
 
 J'ai décidé de ne pas partir d'une fractale mais plutôt du principe de récursivité de celles-ci.
 C'est à dire, un patern qui est identique peu importe à quelle échelle on est.
