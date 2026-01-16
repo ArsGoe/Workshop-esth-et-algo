@@ -201,8 +201,8 @@ t_ascii = new Letter('t');
 e_ascii = new Letter('e');
 x_ascii = new Letter('x');
 
+// Ce listener permet de regarder quelles touches sont utilisées par l'utilisateur et d'écrire les lettres en conséquences (ou de ::supprimer:: la dernière)
 document.addEventListener('keydown', (e) => {
-  
   if (e.key === 't') {
     const letter = document.createElement('div');
     grid.appendChild(letter);
