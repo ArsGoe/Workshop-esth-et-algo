@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Page 3 </title>
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+<body>
+    <main>
+        <h1> You are really close to the answer </h1>
+        <div class="container">
+            <input type="text" data-answer="IMAC" />
+        </div>
+    </main>
+    <script>
+    const inputs = document.querySelectorAll('input');
+    const redirectUrl = 'page4.html';
+
+    function checkInputs() {
+        let allCorrect = true;
+
+        inputs.forEach(input => {
+        const value = input.value.trim().toLowerCase();
+        const answer = input.dataset.answer.toLowerCase();
+
+        input.classList.remove('correct', 'wrong');
+
+        if (!value) {
+            allCorrect = false;
+            return;
+        }
+
+        if (value === answer) {
+            input.classList.add('correct');
+        } else {
+            input.classList.add('wrong');
+            allCorrect = false;
+        }
+        });
+
+        if (allCorrect) {
+        // All correct → redirect after tiny delay to let user see green
+        setTimeout(() => {
+            window.location.href = redirectUrl;
+        }, 500);
+        }
+    }
+
+    inputs.forEach(input => {
+        input.addEventListener('input', checkInputs);
+    });
+    </script>
+</body>
+</html>
