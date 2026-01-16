@@ -1,4 +1,5 @@
-# Numeric Litterature
+# Jeudi
+## Numeric Litterature
 
 Aujourd'hui j'ai décidé de proposer un projet centré sur les Haikus
 Il s'agit d'un petit site web équipé d'une base de données SQLite remplie d'Haikus qui propose de rechercher des textes.
