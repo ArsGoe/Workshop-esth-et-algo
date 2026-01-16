@@ -120,7 +120,7 @@ function tuez_moi(){
   }
 
   // Boucle de création des segments/aplats de couleur de la partie supérieure droite
-  // Il s'agit de la même chose que la boucle au dessus donc pas de commentaires redondants
+  // Il s'agit de la même chose que la boucle au dessus donc pas de commentaires ::redondants::
   for (let i = 0; i < n; i++) {
     let t1 = i / n;
     let t2 = (i + 1) / n;
