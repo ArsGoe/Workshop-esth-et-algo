@@ -113,7 +113,7 @@ function generate() {
         nextCells[column][row] = 1;
       } 
       
-      // Si une cellule seule est vivante au dessus, devenir vivante
+      // Si une cellule seule est vivante au dessus, ::naitre::
       else if (currentCells[column][above]  == 1) {
         nextCells[column][row] = 1;
       }
